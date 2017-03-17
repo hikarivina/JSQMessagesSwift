@@ -117,18 +117,6 @@ open class JSQMessagesCollectionViewCell: UICollectionViewCell {
                         }
                     }
                     
-//                    let count = self.messageBubbleContainerView.subviews.count
-//                    
-//                    if count > 0 {
-//                        
-//                        for i in 0 ..< count {
-//                            
-//                            if self.messageBubbleContainerView.subviews[i] != mediaView {
-//                                
-//                                self.messageBubbleContainerView.subviews[i].removeFromSuperview()
-//                            }
-//                        }
-//                    }
                 }
             }
         }
@@ -154,17 +142,17 @@ open class JSQMessagesCollectionViewCell: UICollectionViewCell {
     
     open class func nib() -> UINib {
         
-        return UINib(nibName: "\(JSQMessagesCollectionViewCell.self)".jsq_className(), bundle: Bundle(for: JSQMessagesCollectionViewCell.self))
+        return UINib(nibName: JSQMessagesCollectionViewCell.jsq_className, bundle: Bundle(for: JSQMessagesCollectionViewCell.self))
     }
     
     open class func cellReuseIdentifier() -> String {
         
-        return "\(JSQMessagesCollectionViewCell.self)".jsq_className()
+        return JSQMessagesCollectionViewCell.jsq_className
     }
     
     open class func mediaCellReuseIdentifier() -> String {
         
-        return "\(JSQMessagesCollectionViewCell.self)".jsq_className() + "_JSQMedia"
+        return JSQMessagesCollectionViewCell.jsq_className + "_JSQMedia"
     }
     
     open class func registerMenuAction(_ action: Selector) {

@@ -22,12 +22,12 @@ open class JSQMessagesLoadEarlierHeaderView: UICollectionReusableView {
     
     open class func nib() -> UINib {
         
-        return UINib(nibName: "\(JSQMessagesLoadEarlierHeaderView.self)".jsq_className(), bundle: Bundle(for: JSQMessagesLoadEarlierHeaderView.self))
+        return UINib(nibName: JSQMessagesLoadEarlierHeaderView.jsq_className, bundle: Bundle(for: JSQMessagesLoadEarlierHeaderView.self))
     }
     
     open class func headerReuseIdentifier() -> String {
         
-        return "\(JSQMessagesLoadEarlierHeaderView.self)".jsq_className()
+        return JSQMessagesLoadEarlierHeaderView.jsq_className
     }
     
     // MARK: - Initialization

@@ -122,7 +122,7 @@ open class JSQMessagesToolbarContentView: UIView {
     
     open class func nib() -> UINib {
         
-        return UINib(nibName: "\(JSQMessagesToolbarContentView.self)".jsq_className(), bundle: Bundle(for: JSQMessagesToolbarContentView.self))
+        return UINib(nibName: JSQMessagesToolbarContentView.jsq_className, bundle: Bundle(for: JSQMessagesToolbarContentView.self))
     }
     
     // MARK: - Initialization

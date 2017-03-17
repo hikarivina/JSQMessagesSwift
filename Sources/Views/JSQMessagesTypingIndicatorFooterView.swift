@@ -20,12 +20,12 @@ open class JSQMessagesTypingIndicatorFooterView: UICollectionReusableView {
     
     open class func nib() -> UINib {
     
-        return UINib(nibName: "\(JSQMessagesTypingIndicatorFooterView.self)".jsq_className(), bundle: Bundle(for: JSQMessagesTypingIndicatorFooterView.self))
+        return UINib(nibName: JSQMessagesTypingIndicatorFooterView.jsq_className, bundle: Bundle(for: JSQMessagesTypingIndicatorFooterView.self))
     }
     
     open class func footerReuseIdentifier() -> String {
         
-        return "\(JSQMessagesTypingIndicatorFooterView.self)".jsq_className()
+        return JSQMessagesTypingIndicatorFooterView.jsq_className
     }
     
     // MARK: - Initialization

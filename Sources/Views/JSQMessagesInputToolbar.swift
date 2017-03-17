@@ -54,7 +54,7 @@ open class JSQMessagesInputToolbar: UIToolbar {
 
     func loadToolbarContentView() -> JSQMessagesToolbarContentView {
         
-        return Bundle(for: JSQMessagesToolbarContentView.self).loadNibNamed("\(JSQMessagesToolbarContentView.self)".jsq_className(), owner: nil, options: nil)!.first as! JSQMessagesToolbarContentView
+        return Bundle(for: JSQMessagesToolbarContentView.self).loadNibNamed(JSQMessagesToolbarContentView.jsq_className, owner: nil, options: nil)!.first as! JSQMessagesToolbarContentView
     }
     
     deinit {

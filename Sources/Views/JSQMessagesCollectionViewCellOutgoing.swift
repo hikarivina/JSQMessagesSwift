@@ -20,16 +20,16 @@ open class JSQMessagesCollectionViewCellOutgoing: JSQMessagesCollectionViewCell 
     
     open override class func nib() -> UINib {
         
-        return UINib(nibName: "\(JSQMessagesCollectionViewCellOutgoing.self)".jsq_className(), bundle: Bundle(for: JSQMessagesCollectionViewCellOutgoing.self))
+        return UINib(nibName: JSQMessagesCollectionViewCellOutgoing.jsq_className, bundle: Bundle(for: JSQMessagesCollectionViewCellOutgoing.self))
     }
     
     open override class func cellReuseIdentifier() -> String {
         
-        return "\(JSQMessagesCollectionViewCellOutgoing.self)".jsq_className()
+        return JSQMessagesCollectionViewCellOutgoing.jsq_className
     }
     
     open override class func mediaCellReuseIdentifier() -> String {
         
-        return "\(JSQMessagesCollectionViewCellOutgoing.self)".jsq_className() + "_JSQMedia"
+        return JSQMessagesCollectionViewCellOutgoing.jsq_className + "_JSQMedia"
     }
 }

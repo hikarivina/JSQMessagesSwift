@@ -100,12 +100,12 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     open class func nib() -> UINib {
         
-        return UINib(nibName: "\(JSQMessagesViewController.self)".jsq_className(), bundle: Bundle.jsq_messagesBundle())
+        return UINib(nibName: JSQMessagesViewController.jsq_className, bundle: Bundle.jsq_messagesBundle())
     }
     
     open static func messagesViewController() -> JSQMessagesViewController {
 
-        return self.init(nibName: "\(JSQMessagesViewController.self)".jsq_className(), bundle: Bundle.jsq_messagesBundle())
+        return self.init(nibName: JSQMessagesViewController.jsq_className, bundle: Bundle.jsq_messagesBundle())
     }
     
     // MARK: - View lifecycle

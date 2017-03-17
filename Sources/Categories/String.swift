@@ -10,11 +10,6 @@ import Foundation
 
 extension String {
     
-    public func jsq_className() -> String {
-        
-        return self.components(separatedBy: ".").last ?? self
-    }
-    
     public func jsq_stringByTrimingWhitespace() -> String {
         
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

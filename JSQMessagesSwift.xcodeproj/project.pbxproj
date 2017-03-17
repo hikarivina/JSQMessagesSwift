@@ -106,6 +106,7 @@
 		CFA3DD881E7A786500EB1C4A /* JSQMessagesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* JSQMessagesSwift.framework */; };
 		CFA3DD891E7A786500EB1C4A /* JSQMessagesSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* JSQMessagesSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFA3DD8E1E7A794C00EB1C4A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DD8D1E7A794C00EB1C4A /* ChatViewController.swift */; };
+		CFA3E0BE1E7B76D700EB1C4A /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3E0BD1E7B76D700EB1C4A /* NSObject.swift */; };
 		OBJ_21 /* JSQMessagesSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* JSQMessagesSwift.swift */; };
 		OBJ_28 /* JSQMessagesSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* JSQMessagesSwiftTests.swift */; };
 		OBJ_30 /* JSQMessagesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* JSQMessagesSwift.framework */; };
@@ -200,6 +201,7 @@
 		CFA3DD821E7A784D00EB1C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFA3DD841E7A784D00EB1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFA3DD8D1E7A794C00EB1C4A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CFA3E0BD1E7B76D700EB1C4A /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		OBJ_12 /* JSQMessagesSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSQMessagesSwiftTests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* JSQMessagesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSQMessagesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_15 /* JSQMessagesSwiftTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = JSQMessagesSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +269,7 @@
 				CFA3DCE51E7A77FD00EB1C4A /* UIDevice.swift */,
 				CFA3DCE61E7A77FD00EB1C4A /* UIImage.swift */,
 				CFA3DCE71E7A77FD00EB1C4A /* UIView.swift */,
+				CFA3E0BD1E7B76D700EB1C4A /* NSObject.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -388,7 +391,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -397,7 +400,6 @@
 				CFA3DD771E7A784D00EB1C4A /* ChatDemo */,
 				OBJ_13 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -508,7 +510,7 @@
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -563,6 +565,7 @@
 			buildActionMask = 0;
 			files = (
 				CFA3DD361E7A77FE00EB1C4A /* JSQMessagesCollectionViewLayoutAttributes.swift in Sources */,
+				CFA3E0BE1E7B76D700EB1C4A /* NSObject.swift in Sources */,
 				CFA3DD5E1E7A77FE00EB1C4A /* JSQMessagesInputToolbar.swift in Sources */,
 				CFA3DD681E7A77FE00EB1C4A /* JSQMessagesTypingIndicatorFooterView.swift in Sources */,
 				CFA3DD461E7A77FE00EB1C4A /* JSQMessagesAvatarImage.swift in Sources */,
@@ -924,6 +927,7 @@
 				CFA3DD871E7A784D00EB1C4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		OBJ_17 /* Build configuration list for PBXNativeTarget "JSQMessagesSwift" */ = {
 			isa = XCConfigurationList;
