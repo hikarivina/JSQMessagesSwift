@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF024A461E7DA82800CBB91B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A451E7DA82800CBB91B /* DateHelper.swift */; };
+		CF024A481E7DA98A00CBB91B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A471E7DA98A00CBB91B /* Date+Ext.swift */; };
 		CFA3DD161E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD171E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD181E7A77FE00EB1C4A /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */; };
@@ -144,6 +146,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF024A451E7DA82800CBB91B /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		CF024A471E7DA98A00CBB91B /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		CFA3DCDF1E7A77FD00EB1C4A /* JSQMessagesAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSQMessagesAssets.bundle; sourceTree = "<group>"; };
 		CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSQSystemSoundPlayer+Messages.swift"; sourceTree = "<group>"; };
 		CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
@@ -259,7 +263,7 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		CFA3DCE01E7A77FD00EB1C4A /* Categories */ = {
+		CFA3DCE01E7A77FD00EB1C4A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */,
@@ -270,7 +274,10 @@
 				CFA3DCE61E7A77FD00EB1C4A /* UIImage.swift */,
 				CFA3DCE71E7A77FD00EB1C4A /* UIView.swift */,
 				CFA3E0BD1E7B76D700EB1C4A /* NSObject.swift */,
+				CF024A451E7DA82800CBB91B /* DateHelper.swift */,
+				CF024A471E7DA98A00CBB91B /* Date+Ext.swift */,
 			);
+			name = Extension;
 			path = Categories;
 			sourceTree = "<group>";
 		};
@@ -407,7 +414,7 @@
 			children = (
 				CFA3DCDB1E7A77FD00EB1C4A /* 3rd party */,
 				CFA3DCDD1E7A77FD00EB1C4A /* Assets */,
-				CFA3DCE01E7A77FD00EB1C4A /* Categories */,
+				CFA3DCE01E7A77FD00EB1C4A /* Extension */,
 				CFA3DCE81E7A77FD00EB1C4A /* Controllers */,
 				CFA3DCEC1E7A77FD00EB1C4A /* Factories */,
 				CFA3DCF21E7A77FE00EB1C4A /* Layouts */,
@@ -579,6 +586,7 @@
 				CFA3DD281E7A77FE00EB1C4A /* JSQMessagesAvatarImageFactory.swift in Sources */,
 				CFA3DD161E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */,
 				CFA3DD641E7A77FE00EB1C4A /* JSQMessagesMediaPlaceholderView.swift in Sources */,
+				CF024A461E7DA82800CBB91B /* DateHelper.swift in Sources */,
 				CFA3DD1A1E7A77FE00EB1C4A /* String.swift in Sources */,
 				CFA3DD301E7A77FE00EB1C4A /* JSQMessagesToolbarButtonFactory.swift in Sources */,
 				CFA3DD321E7A77FE00EB1C4A /* JSQMessagesCollectionViewFlowLayout.swift in Sources */,
@@ -590,6 +598,7 @@
 				CFA3DD661E7A77FE00EB1C4A /* JSQMessagesToolbarContentView.swift in Sources */,
 				CFA3DD241E7A77FE00EB1C4A /* JSQMessagesKeyboardController.swift in Sources */,
 				CFA3DD261E7A77FE00EB1C4A /* JSQMessagesViewController.swift in Sources */,
+				CF024A481E7DA98A00CBB91B /* Date+Ext.swift in Sources */,
 				CFA3DD2E1E7A77FE00EB1C4A /* JSQMessagesTimestampFormatter.swift in Sources */,
 				CFA3DD401E7A77FE00EB1C4A /* JSQMessageBubbleImageDataSource.swift in Sources */,
 				CFA3DD441E7A77FE00EB1C4A /* JSQMessageMediaData.swift in Sources */,

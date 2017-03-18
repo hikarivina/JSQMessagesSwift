@@ -476,7 +476,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         cell.layer.rasterizationScale = UIScreen.main.scale
         cell.layer.shouldRasterize = true
         
-        let time = JSQMessagesTimestampFormatter.sharedFormatter.sendTime(messageItem.date)
+        let time = messageItem.date.jsq_Mmdd()
         cell.sendTimeLabel.text = time
         
         return cell

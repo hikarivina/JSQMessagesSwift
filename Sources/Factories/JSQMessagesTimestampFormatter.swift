@@ -12,7 +12,6 @@ import UIKit
 
 open class JSQMessagesTimestampFormatter: NSObject {
 
-    fileprivate(set) open var stringHHmmFormat: DateFormatter!
     fileprivate(set) open var dateFormatter: DateFormatter = DateFormatter()
     
     fileprivate(set) open var dateTextAttributes: [String : AnyObject]
@@ -21,10 +20,6 @@ open class JSQMessagesTimestampFormatter: NSObject {
     open static let sharedFormatter: JSQMessagesTimestampFormatter = JSQMessagesTimestampFormatter()
     
     override init() {
-        
-        stringHHmmFormat = DateFormatter()
-        stringHHmmFormat.locale = Locale(identifier: "en_US_POSIX")
-        stringHHmmFormat.dateFormat = "HH:mm"
         
         self.dateFormatter.locale = Locale.current
         self.dateFormatter.doesRelativeDateFormatting = true
@@ -48,12 +43,7 @@ open class JSQMessagesTimestampFormatter: NSObject {
         
     }
     
-    // MARK: - Formatter
-    
-    open func sendTime(_ date: Date) -> String {
-        return self.stringHHmmFormat.string(from: date)
-    }
-    
+    // MARK: - Formatter    
     open func timestamp(_ date: Date) -> String {
         
         self.dateFormatter.dateStyle = .medium
