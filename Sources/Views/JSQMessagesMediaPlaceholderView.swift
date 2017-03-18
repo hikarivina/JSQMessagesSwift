@@ -19,7 +19,7 @@ class JSQMessagesMediaPlaceholderView: UIView {
         
         let lightGrayColor = UIColor.jsq_messageBubbleLightGrayColor()
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        spinner.color = lightGrayColor
+        spinner.color = UIColor.darkGray
         
         return JSQMessagesMediaPlaceholderView(frame: CGRect(x: 0, y: 0, width: 200, height: 120), backgroundColor: lightGrayColor, activityIndicatorView: spinner)
     }

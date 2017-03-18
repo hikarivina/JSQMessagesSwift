@@ -10,6 +10,8 @@ import UIKit
 
 open class JSQMessagesCollectionViewCellOutgoing: JSQMessagesCollectionViewCell {
     
+    @IBOutlet fileprivate(set) open var deliveryStatus: JSQMessagesLabel!
+
     open override func awakeFromNib() {
         
         super.awakeFromNib()

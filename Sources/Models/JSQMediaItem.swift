@@ -111,11 +111,6 @@ open class JSQMediaItem: NSObject, JSQMessageMediaData, NSCoding, NSCopying {
     
     open override func isEqual(_ object: Any?) -> Bool {
         
-        if !(object! as AnyObject).isKind(of: type(of: self)) {
-            
-            return false
-        }
-        
         if let item = object as? JSQMediaItem {
             
             return self.appliesMediaViewMaskAsOutgoing == item.appliesMediaViewMaskAsOutgoing

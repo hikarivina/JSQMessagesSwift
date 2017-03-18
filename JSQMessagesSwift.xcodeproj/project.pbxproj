@@ -309,7 +309,9 @@
 		CFA3DCF61E7A77FE00EB1C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CFA3DD031E7A77FE00EB1C4A /* JSQVideoMediaItem.swift */,
 				CFA3DCF71E7A77FE00EB1C4A /* JSQLocationMediaItem.swift */,
+				CFA3DD021E7A77FE00EB1C4A /* JSQPhotoMediaItem.swift */,
 				CFA3DCF81E7A77FE00EB1C4A /* JSQMediaItem.swift */,
 				CFA3DCF91E7A77FE00EB1C4A /* JSQMessage.swift */,
 				CFA3DCFA1E7A77FE00EB1C4A /* JSQMessageAvatarImageDataSource.swift */,
@@ -320,8 +322,6 @@
 				CFA3DCFF1E7A77FE00EB1C4A /* JSQMessagesBubbleImage.swift */,
 				CFA3DD001E7A77FE00EB1C4A /* JSQMessagesCollectionViewDataSource.swift */,
 				CFA3DD011E7A77FE00EB1C4A /* JSQMessagesCollectionViewDelegateFlowLayout.swift */,
-				CFA3DD021E7A77FE00EB1C4A /* JSQPhotoMediaItem.swift */,
-				CFA3DD031E7A77FE00EB1C4A /* JSQVideoMediaItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

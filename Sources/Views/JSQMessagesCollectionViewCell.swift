@@ -22,7 +22,9 @@ open class JSQMessagesCollectionViewCell: UICollectionViewCell {
     fileprivate static var jsqMessagesCollectionViewCellActions: Set<Selector> = Set()
     
     open var delegate: JSQMessagesCollectionViewCellDelegate?
+    open var bubbleImage: UIImage?
     
+    @IBOutlet fileprivate(set) open var sendTimeLabel: JSQMessagesLabel!
     @IBOutlet fileprivate(set) open var cellTopLabel: JSQMessagesLabel!
     @IBOutlet fileprivate(set) open var messageBubbleTopLabel: JSQMessagesLabel!
     @IBOutlet fileprivate(set) open var cellBottomLabel: JSQMessagesLabel!
@@ -109,15 +111,6 @@ open class JSQMessagesCollectionViewCell: UICollectionViewCell {
                 self.messageBubbleContainerView.addSubview(mediaView)
                 self.messageBubbleContainerView.jsq_pinAllEdgesOfSubview(mediaView)
                 
-                DispatchQueue.main.async {
-                    
-                    self.messageBubbleContainerView.subviews.forEach {
-                        if $0 != mediaView {
-                            $0.removeFromSuperview()
-                        }
-                    }
-                    
-                }
             }
         }
     }

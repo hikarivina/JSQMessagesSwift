@@ -418,7 +418,9 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
             cell.messageBubbleImageView?.highlightedImage = bubbleImageDataSource.messageBubbleHighlightedImage
         }
         else {
-            
+            // MARk: Dang Test
+            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath)
+            cell.bubbleImage = bubbleImageDataSource.messageBubbleImage
             let messageMedia = messageItem.media!
             cell.mediaView = messageMedia.mediaView != nil ? messageMedia.mediaView: messageMedia.mediaPlaceholderView
         }
@@ -473,6 +475,9 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         cell.backgroundColor = UIColor.clear
         cell.layer.rasterizationScale = UIScreen.main.scale
         cell.layer.shouldRasterize = true
+        
+        let time = JSQMessagesTimestampFormatter.sharedFormatter.sendTime(messageItem.date)
+        cell.sendTimeLabel.text = time
         
         return cell
     }
@@ -560,7 +565,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForCellTopLabelAtIndexPath indexPath: IndexPath) -> CGFloat {
         
-        return 0
+        return 10
     }
     
     open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForMessageBubbleTopLabelAtIndexPath indexPath: IndexPath) -> CGFloat {

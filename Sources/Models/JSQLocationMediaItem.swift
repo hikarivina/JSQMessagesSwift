@@ -139,14 +139,12 @@ open class JSQLocationMediaItem: JSQMediaItem, MKAnnotation {
         
         get {
             
-            if let _ = self.location,
-                let cachedMapSnapshotImage = self.cachedMapSnapshotImage {
-                    
-                if let cachedMapImageView = self.cachedMapImageView {
-                 
-                    return cachedMapImageView
-                }
-                    
+            if let cachedMapImageView = self.cachedMapImageView {
+                
+                return cachedMapImageView
+                
+            } else if let cachedMapSnapshotImage = self.cachedMapSnapshotImage {
+                
                 let imageView = UIImageView(image: cachedMapSnapshotImage)
                 imageView.contentMode = .scaleAspectFill
                 imageView.clipsToBounds = true
@@ -157,7 +155,8 @@ open class JSQLocationMediaItem: JSQMediaItem, MKAnnotation {
                 return self.cachedMapImageView
             }
             
-            return nil
+            
+            return self.mediaPlaceholderView
         }
     }
     
