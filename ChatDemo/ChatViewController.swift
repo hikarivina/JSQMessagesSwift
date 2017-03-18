@@ -66,7 +66,11 @@ class ChatViewController: JSQMessagesViewController {
             self.collectionView.reloadData()
         })
         let mes3 = JSQMessage(senderId: "1234", senderDisplayName: "Dang", date: Date(), media: localItem)
-        self.messages = [mes1, mes0, mes2, mes3]
+        let mes4 = JSQMessage(senderId: "124", senderDisplayName: "DANG", date: Date(), text: "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+        let mes5 = JSQMessage(senderId: "123", senderDisplayName: "DANG", date: Date(), text: "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+        let mes6 = JSQMessage(senderId: "1234", senderDisplayName: "DANG", date: Date(), text: "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+
+        self.messages = [mes1, mes0, mes2, mes3, mes4, mes5, mes6]
         
     }
     override func didPressSendButton(_ button: UIButton, withMessageText text: String, senderId: String, senderDisplayName: String, date: Date) {
