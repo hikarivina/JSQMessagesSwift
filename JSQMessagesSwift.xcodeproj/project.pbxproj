@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF024A461E7DA82800CBB91B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A451E7DA82800CBB91B /* DateHelper.swift */; };
 		CF024A481E7DA98A00CBB91B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A471E7DA98A00CBB91B /* Date+Ext.swift */; };
+		CF024A4A1E7DB66B00CBB91B /* JSQTypingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A491E7DB66B00CBB91B /* JSQTypingAnimation.swift */; };
 		CFA3DD161E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD171E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD181E7A77FE00EB1C4A /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */; };
@@ -148,6 +149,7 @@
 /* Begin PBXFileReference section */
 		CF024A451E7DA82800CBB91B /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		CF024A471E7DA98A00CBB91B /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		CF024A491E7DB66B00CBB91B /* JSQTypingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQTypingAnimation.swift; sourceTree = "<group>"; };
 		CFA3DCDF1E7A77FD00EB1C4A /* JSQMessagesAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSQMessagesAssets.bundle; sourceTree = "<group>"; };
 		CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSQSystemSoundPlayer+Messages.swift"; sourceTree = "<group>"; };
 		CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				CFA3DD131E7A77FE00EB1C4A /* JSQMessagesToolbarContentView.xib */,
 				CFA3DD141E7A77FE00EB1C4A /* JSQMessagesTypingIndicatorFooterView.swift */,
 				CFA3DD151E7A77FE00EB1C4A /* JSQMessagesTypingIndicatorFooterView.xib */,
+				CF024A491E7DB66B00CBB91B /* JSQTypingAnimation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				CFA3DD641E7A77FE00EB1C4A /* JSQMessagesMediaPlaceholderView.swift in Sources */,
 				CF024A461E7DA82800CBB91B /* DateHelper.swift in Sources */,
 				CFA3DD1A1E7A77FE00EB1C4A /* String.swift in Sources */,
+				CF024A4A1E7DB66B00CBB91B /* JSQTypingAnimation.swift in Sources */,
 				CFA3DD301E7A77FE00EB1C4A /* JSQMessagesToolbarButtonFactory.swift in Sources */,
 				CFA3DD321E7A77FE00EB1C4A /* JSQMessagesCollectionViewFlowLayout.swift in Sources */,
 				OBJ_21 /* JSQMessagesSwift.swift in Sources */,

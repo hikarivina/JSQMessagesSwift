@@ -75,9 +75,7 @@ open class JSQMessagesCollectionView: UICollectionView, JSQMessagesCollectionVie
     func dequeueTypingIndicatorFooterView(_ indexPath: IndexPath) -> JSQMessagesTypingIndicatorFooterView {
         
         let footerView = super.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: JSQMessagesTypingIndicatorFooterView.footerReuseIdentifier(), for: indexPath) as! JSQMessagesTypingIndicatorFooterView
-        
-        footerView.configure(self.typingIndicatorEllipsisColor, messageBubbleColor: self.typingIndicatorMessageBubbleColor, shouldDisplayOnLeft: self.typingIndicatorDisplaysOnLeft, forCollectionView: self)
-        
+                
         return footerView
     }
     

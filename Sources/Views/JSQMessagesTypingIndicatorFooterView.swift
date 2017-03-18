@@ -12,11 +12,7 @@ open class JSQMessagesTypingIndicatorFooterView: UICollectionReusableView {
     
     static var kJSQMessagesTypingIndicatorFooterViewHeight: CGFloat = 46
     
-    @IBOutlet var bubbleImageView: UIImageView!
-    @IBOutlet var bubbleImageViewRightHorizontalConstraint: NSLayoutConstraint!
-    
-    @IBOutlet var typingIndicatorImageView: UIImageView!
-    @IBOutlet var typingIndicatorImageViewRightHorizontalConstraint: NSLayoutConstraint!
+    @IBOutlet var animationView: UIView!
     
     open class func nib() -> UINib {
     
@@ -38,7 +34,8 @@ open class JSQMessagesTypingIndicatorFooterView: UICollectionReusableView {
         
         self.backgroundColor = UIColor.clear
         self.isUserInteractionEnabled = false
-        self.typingIndicatorImageView.contentMode = .scaleAspectFit
+        
+        self.setupAnimation()
     }
     
     // MARK: - Reusable view
@@ -47,42 +44,22 @@ open class JSQMessagesTypingIndicatorFooterView: UICollectionReusableView {
         
         didSet {
         
-            self.bubbleImageView.backgroundColor = backgroundColor
         }
     }
     
     // MARK: - Typing indicator
-    func configure(_ ellipsisColor: UIColor, messageBubbleColor: UIColor, shouldDisplayOnLeft: Bool, forCollectionView collectionView: UICollectionView) {
-        
-        let bubbleMarginMinimumSpacing: CGFloat = 6
-        let indicatorMarginMinimumSpacing: CGFloat = 26
-        
-        let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        
-        if shouldDisplayOnLeft {
-            
-            self.bubbleImageView.image = bubbleImageFactory.incomingMessagesBubbleImage(color: messageBubbleColor).messageBubbleImage
-            
-            let collectionViewWidth = collectionView.frame.width
-            let bubbleWidth = self.bubbleImageView.frame.width
-            let indicatorWidth = self.typingIndicatorImageView.frame.width
-            
-            let bubbleMarginMaximumSpacing = collectionViewWidth - bubbleWidth - bubbleMarginMinimumSpacing
-            let indicatorMarginMaximumSpacing = collectionViewWidth - indicatorWidth - indicatorMarginMinimumSpacing
-            
-            self.bubbleImageViewRightHorizontalConstraint.constant = bubbleMarginMaximumSpacing
-            self.typingIndicatorImageViewRightHorizontalConstraint.constant = indicatorMarginMaximumSpacing
-        }
-        else {
-            
-            self.bubbleImageView.image = bubbleImageFactory.outgoingMessagesBubbleImage(color: messageBubbleColor).messageBubbleImage
-            
-            self.bubbleImageViewRightHorizontalConstraint.constant = bubbleMarginMinimumSpacing
-            self.typingIndicatorImageViewRightHorizontalConstraint.constant = indicatorMarginMinimumSpacing
-        }
-        
-        self.setNeedsUpdateConstraints()
-        
-        self.typingIndicatorImageView.image = UIImage.jsq_defaultTypingIndicatorImage()?.jsq_imageMaskedWithColor(ellipsisColor)
+    func configure( ) {
+
+    }
+    
+    private func setupAnimation() {
+        let tp = JSQTypingAnimation()
+        var animationRect = UIEdgeInsetsInsetRect(self.animationView.frame, UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2))
+        let minEdge = min(animationRect.width, animationRect.height)
+        animationRect.size = CGSize(width: minEdge, height: minEdge)
+
+        self.animationView.layer.speed = 1
+        self.animationView.layer.sublayers?.removeAll()
+        tp.setUpAnimation(in: self.animationView.layer, size: animationRect.size , color: UIColor.lightGray)
     }
 }
