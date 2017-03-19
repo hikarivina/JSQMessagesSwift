@@ -38,6 +38,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func setupUI() {
+        
         let image = UIImage(named: "background")
         let imgBackground:UIImageView = UIImageView(frame: self.view.bounds)
         imgBackground.image = image
@@ -78,6 +79,16 @@ class ChatViewController: JSQMessagesViewController {
         self.messages.append(mes)
         self.showTypingIndicator = true
         self.finishSendingMessage()
+    }
+    
+    override func didPressAccessoryButton(_ sender: UIButton) {
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 200))
+//        let tv = self.inputToolbar.contentView.textView
+//        tv?.inputView = view
+//        tv?.inputAccessoryView = nil
+//        tv?.reloadInputViews()
+        //tv?.becomeFirstResponder()
+        
     }
     
 }

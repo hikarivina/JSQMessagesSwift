@@ -212,12 +212,6 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         return .all
     }
     
-//    open override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-//        
-//        super.willRotate(to: toInterfaceOrientation, duration: duration)
-//        
-//        self.collectionView.collectionViewLayout.invalidateLayout(with: JSQMessagesCollectionViewFlowLayoutInvalidationContext.context())
-//    }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -233,20 +227,6 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         
     }
     
-    
-    
-//    open override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-//        
-//        super.didRotate(from: fromInterfaceOrientation)
-//        
-//        if self.showTypingIndicator {
-//            
-//            self.showTypingIndicator = false
-//            self.showTypingIndicator = true
-//            
-//            self.collectionView.reloadData()
-//        }
-//    }
     
     // MARK: - Messages view controller
     
@@ -419,8 +399,8 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         }
         else {
             // MARk: Dang Test
-            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath)
-            cell.bubbleImage = bubbleImageDataSource.messageBubbleImage
+//            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath)
+//            cell.bubbleImage = bubbleImageDataSource.messageBubbleImage
             let messageMedia = messageItem.media!
             cell.mediaView = messageMedia.mediaView != nil ? messageMedia.mediaView: messageMedia.mediaPlaceholderView
         }
