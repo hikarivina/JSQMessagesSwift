@@ -76,6 +76,7 @@ class ChatViewController: JSQMessagesViewController {
     override func didPressSendButton(_ button: UIButton, withMessageText text: String, senderId: String, senderDisplayName: String, date: Date) {
         let mes = JSQMessage(senderId: "1234", senderDisplayName: "Dang", date: Date(), text: text)
         self.messages.append(mes)
+        self.showTypingIndicator = true
         self.finishSendingMessage()
     }
     
