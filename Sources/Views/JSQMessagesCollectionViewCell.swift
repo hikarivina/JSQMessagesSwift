@@ -24,7 +24,7 @@ open class JSQMessagesCollectionViewCell: UICollectionViewCell {
     open var delegate: JSQMessagesCollectionViewCellDelegate?
     open var bubbleImage: UIImage?
     
-    @IBOutlet fileprivate(set) open var sendTimeLabel: JSQMessagesLabel!
+    @IBOutlet fileprivate(set) open var sendTimeLabel: UILabel!
     @IBOutlet fileprivate(set) open var cellTopLabel: JSQMessagesLabel!
     @IBOutlet fileprivate(set) open var messageBubbleTopLabel: JSQMessagesLabel!
     @IBOutlet fileprivate(set) open var cellBottomLabel: JSQMessagesLabel!
