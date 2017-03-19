@@ -709,10 +709,12 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     open func keyboardController(_ keyboardController: JSQMessagesKeyboardController, keyboardDidChangeFrame keyboardFrame: CGRect) {
         
-        if !self.inputToolbar.contentView.textView.isFirstResponder && self.toolbarBottomLayoutGuide.constant == 0 {
-            
-            return
-        }
+        // MARK: DANG TEST
+//        if !self.inputToolbar.contentView.textView.isFirstResponder && self.toolbarBottomLayoutGuide.constant == 0 {
+//            
+//            return
+//        }
+        
         
         var heightFromBottom = self.collectionView.frame.maxY - keyboardFrame.minY
         heightFromBottom = max(0, heightFromBottom)

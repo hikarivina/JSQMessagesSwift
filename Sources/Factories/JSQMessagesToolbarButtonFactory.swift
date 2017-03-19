@@ -13,19 +13,17 @@ open class JSQMessagesToolbarButtonFactory {
     
     open class func defaultAccessoryButtonItem() -> UIButton {
     
-//        let accessoryImage = UIImage.jsq_defaultAccessoryImage()!
-//        let normalImage = accessoryImage.jsq_imageMaskedWithColor(UIColor.lightGray)
-//        let highlightedImage = accessoryImage.jsq_imageMaskedWithColor(UIColor.darkGray)
-//        
-//        let accessoryButton = UIButton(frame: CGRect(x: 0, y: 0, width: accessoryImage.size.width, height: 32))
-//        accessoryButton.setImage(normalImage, for: UIControlState())
-//        accessoryButton.setImage(highlightedImage, for: .highlighted)
-//        
-//        accessoryButton.contentMode = .scaleAspectFit
-//        accessoryButton.backgroundColor = UIColor.clear
-//        accessoryButton.tintColor = UIColor.lightGray
-        // MARK: Dang Test
-        let accessoryButton = ActionButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let accessoryImage = UIImage.jsq_defaultAccessoryImage()!
+        let normalImage = accessoryImage.jsq_imageMaskedWithColor(UIColor.lightGray)
+        let highlightedImage = accessoryImage.jsq_imageMaskedWithColor(UIColor.darkGray)
+        
+        let accessoryButton = UIButton(frame: CGRect(x: 0, y: 0, width: accessoryImage.size.width, height: 32))
+        accessoryButton.setImage(normalImage, for: UIControlState())
+        accessoryButton.setImage(highlightedImage, for: .highlighted)
+        
+        accessoryButton.contentMode = .scaleAspectFit
+        accessoryButton.backgroundColor = UIColor.clear
+        accessoryButton.tintColor = UIColor.lightGray
         
         return accessoryButton
     }

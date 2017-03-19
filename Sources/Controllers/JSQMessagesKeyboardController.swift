@@ -119,7 +119,17 @@ open class JSQMessagesKeyboardController: NSObject, UIGestureRecognizerDelegate 
     
     func jsq_didReceiveKeyboardDidShowNotification(_ notification: Notification) {
         
-        self.keyboardView = self.textView.inputAccessoryView?.superview
+        print("CUSTOM KB  Did Show")
+        
+        if let view = self.textView.inputAccessoryView?.superview {
+            self.keyboardView = view
+
+        } else {
+            
+            print("ZERO")
+            
+        }
+        
         self.jsq_setKeyboardView(hidden: false)
         
         self.jsq_handleKeyboardNotification(notification) { (finished) -> Void in

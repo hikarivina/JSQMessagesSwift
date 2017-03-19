@@ -130,13 +130,6 @@ open class JSQMessagesComposerTextView: UITextView {
         }
     }
     
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.inputView = nil
-//        self.reloadInputViews()
-        //self.becomeFirstResponder()
-    }
-    
-    
     // MARK: - Drawing
     
     open override func draw(_ rect: CGRect) {

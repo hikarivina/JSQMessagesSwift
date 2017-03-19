@@ -46,6 +46,10 @@ class ChatViewController: JSQMessagesViewController {
         imgBackground.clipsToBounds = true
         self.collectionView?.backgroundView = imgBackground
         
+        let view = JSQAccessoryButton(frame: CGRect(x: 0, y: 0, width: 30  , height: 30))
+        view.setImage(UIImage(named: "thumbnail"), for: .normal)
+        self.inputToolbar.contentView.leftBarButtonItem = view
+        
         self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(image: UIImage(named:"avatar-1")!, diameter: 120)
         self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(image: UIImage(named:"avatar-2")!, diameter: 120)
         
