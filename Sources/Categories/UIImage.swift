@@ -95,4 +95,19 @@ extension UIImage {
         
         return UIImage.jsq_bubbleImageFromBundle(name: "play")
     }
+    
+    public class func jsq_PhotoLibrary() -> UIImage? {
+        
+        return UIImage.jsq_bubbleImageFromBundle(name: "chat_bar_icons_pic")
+    }
+    public class func jsq_Camera() -> UIImage? {
+        
+        return UIImage.jsq_bubbleImageFromBundle(name: "chat_bar_icons_camera")
+    }
+    public class func jsq_Location() -> UIImage? {
+        
+        return UIImage.jsq_bubbleImageFromBundle(name: "chat_bar_icons_location")
+    }
+
+    
 }

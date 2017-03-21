@@ -20,6 +20,8 @@ public protocol JSQMessagesKeyboardControllerDelegate {
 open class JSQMessagesKeyboardController: NSObject, UIGestureRecognizerDelegate {
     
     open var delegate: JSQMessagesKeyboardControllerDelegate?
+    open var actionButton: JSQAccessoryButton?
+
     fileprivate(set) open var textView: UITextView
     fileprivate(set) open var contextView: UIView
     fileprivate(set) open var panGestureRecognizer: UIPanGestureRecognizer
@@ -119,14 +121,12 @@ open class JSQMessagesKeyboardController: NSObject, UIGestureRecognizerDelegate 
     
     func jsq_didReceiveKeyboardDidShowNotification(_ notification: Notification) {
         
-        print("CUSTOM KB  Did Show")
-        
         if let view = self.textView.inputAccessoryView?.superview {
             self.keyboardView = view
 
         } else {
             
-            print("ZERO")
+            // TODO: keyboardView
             
         }
         
@@ -207,6 +207,8 @@ open class JSQMessagesKeyboardController: NSObject, UIGestureRecognizerDelegate 
         self.jsq_setKeyboardView(hidden: true)
         self.jsq_removeKeyboardFrameObserver()
         self.textView.resignFirstResponder()
+        self.actionButton?.resignFirstResponder()
+        
     }
     
     // MARK: - Key-value observing

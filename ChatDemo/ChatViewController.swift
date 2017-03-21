@@ -47,8 +47,13 @@ class ChatViewController: JSQMessagesViewController {
         self.collectionView?.backgroundView = imgBackground
         
         let view = JSQAccessoryButton(frame: CGRect(x: 0, y: 0, width: 30  , height: 30))
+        let action1 = (image: UIImage.jsq_PhotoLibrary()!, title: "Library", action: { print("Photo") })
+        let action2 = (image: UIImage.jsq_Camera()!, title: "Camera", action: { print("Camera") })
+        let action3 = (image: UIImage.jsq_Location()!, title: "Location", action: { print("Location") })
+        view.sourses = [action1, action2, action3]
         view.setImage(UIImage(named: "thumbnail"), for: .normal)
         self.inputToolbar.contentView.leftBarButtonItem = view
+        self.keyboardController.actionButton = view
         
         self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(image: UIImage(named:"avatar-1")!, diameter: 120)
         self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(image: UIImage(named:"avatar-2")!, diameter: 120)
@@ -86,12 +91,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 200))
-//        let tv = self.inputToolbar.contentView.textView
-//        tv?.inputView = view
-//        tv?.inputAccessoryView = nil
-//        tv?.reloadInputViews()
-        //tv?.becomeFirstResponder()
+
         
     }
     

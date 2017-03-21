@@ -11,6 +11,10 @@
 		CF024A481E7DA98A00CBB91B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A471E7DA98A00CBB91B /* Date+Ext.swift */; };
 		CF024A4A1E7DB66B00CBB91B /* JSQTypingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF024A491E7DB66B00CBB91B /* JSQTypingAnimation.swift */; };
 		CF31C5621E7E560B00293812 /* JSQAccessoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31C5611E7E560B00293812 /* JSQAccessoryButton.swift */; };
+		CF31C5671E7F023B00293812 /* JSQActionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31C5661E7F023B00293812 /* JSQActionSelectView.swift */; };
+		CF31C5691E7F026D00293812 /* JSQActionSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF31C5681E7F026D00293812 /* JSQActionSelectView.xib */; };
+		CF8012F41E7F8A66003AFFBF /* JSQActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8012F21E7F8A66003AFFBF /* JSQActionViewCell.swift */; };
+		CF8012F51E7F8A66003AFFBF /* JSQActionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8012F31E7F8A66003AFFBF /* JSQActionViewCell.xib */; };
 		CFA3DD161E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD171E7A77FE00EB1C4A /* JSQSystemSoundPlayer+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */; };
 		CFA3DD181E7A77FE00EB1C4A /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */; };
@@ -152,6 +156,10 @@
 		CF024A471E7DA98A00CBB91B /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		CF024A491E7DB66B00CBB91B /* JSQTypingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQTypingAnimation.swift; sourceTree = "<group>"; };
 		CF31C5611E7E560B00293812 /* JSQAccessoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQAccessoryButton.swift; sourceTree = "<group>"; };
+		CF31C5661E7F023B00293812 /* JSQActionSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQActionSelectView.swift; sourceTree = "<group>"; };
+		CF31C5681E7F026D00293812 /* JSQActionSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQActionSelectView.xib; sourceTree = "<group>"; };
+		CF8012F21E7F8A66003AFFBF /* JSQActionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQActionViewCell.swift; sourceTree = "<group>"; };
+		CF8012F31E7F8A66003AFFBF /* JSQActionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQActionViewCell.xib; sourceTree = "<group>"; };
 		CFA3DCDF1E7A77FD00EB1C4A /* JSQMessagesAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSQMessagesAssets.bundle; sourceTree = "<group>"; };
 		CFA3DCE11E7A77FD00EB1C4A /* JSQSystemSoundPlayer+Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSQSystemSoundPlayer+Messages.swift"; sourceTree = "<group>"; };
 		CFA3DCE21E7A77FD00EB1C4A /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
@@ -279,6 +287,10 @@
 				CFA3DD121E7A77FE00EB1C4A /* JSQMessagesToolbarContentView.swift */,
 				CFA3DD131E7A77FE00EB1C4A /* JSQMessagesToolbarContentView.xib */,
 				CF31C5611E7E560B00293812 /* JSQAccessoryButton.swift */,
+				CF31C5661E7F023B00293812 /* JSQActionSelectView.swift */,
+				CF31C5681E7F026D00293812 /* JSQActionSelectView.xib */,
+				CF8012F21E7F8A66003AFFBF /* JSQActionViewCell.swift */,
+				CF8012F31E7F8A66003AFFBF /* JSQActionViewCell.xib */,
 			);
 			name = JSQInputToolBar;
 			sourceTree = "<group>";
@@ -567,10 +579,12 @@
 				CFA3DD6B1E7A781D00EB1C4A /* JSQMessagesAssets.bundle in Resources */,
 				CFA3DD6C1E7A781D00EB1C4A /* JSQMessagesViewController.xib in Resources */,
 				CFA3DD6D1E7A781D00EB1C4A /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
+				CF8012F51E7F8A66003AFFBF /* JSQActionViewCell.xib in Resources */,
 				CFA3DD6E1E7A781D00EB1C4A /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				CFA3DD6F1E7A781D00EB1C4A /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				CFA3DD701E7A781D00EB1C4A /* JSQMessagesToolbarContentView.xib in Resources */,
 				CFA3DD711E7A781D00EB1C4A /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
+				CF31C5691E7F026D00293812 /* JSQActionSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +650,7 @@
 				CFA3DD441E7A77FE00EB1C4A /* JSQMessageMediaData.swift in Sources */,
 				CFA3DD3A1E7A77FE00EB1C4A /* JSQMediaItem.swift in Sources */,
 				CFA3DD1C1E7A77FE00EB1C4A /* UIColor.swift in Sources */,
+				CF8012F41E7F8A66003AFFBF /* JSQActionViewCell.swift in Sources */,
 				CFA3DD341E7A77FE00EB1C4A /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.swift in Sources */,
 				CFA3DD601E7A77FE00EB1C4A /* JSQMessagesLabel.swift in Sources */,
 				CFA3DD581E7A77FE00EB1C4A /* JSQMessagesCollectionViewCellIncoming.swift in Sources */,
@@ -649,6 +664,7 @@
 				CFA3DD521E7A77FE00EB1C4A /* JSQMessagesCellTextView.swift in Sources */,
 				CFA3DD501E7A77FE00EB1C4A /* JSQVideoMediaItem.swift in Sources */,
 				CFA3DD5A1E7A77FE00EB1C4A /* JSQMessagesCollectionViewCellOutgoing.swift in Sources */,
+				CF31C5671E7F023B00293812 /* JSQActionSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +857,7 @@
 		OBJ_18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6NE57FX5TR;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -863,6 +880,7 @@
 		OBJ_19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6NE57FX5TR;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (

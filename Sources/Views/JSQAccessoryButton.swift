@@ -10,7 +10,9 @@ import UIKit
 
 open class JSQAccessoryButton: UIButton {
     
-    required public init?(coder aDecoder: NSCoder) {
+    public var sourses: [(image: UIImage, title: String, action: () -> ())]!
+    
+     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         addTarget(self, action: #selector(JSQAccessoryButton.didTap(sender:)), for: .touchUpInside)
@@ -34,23 +36,30 @@ open class JSQAccessoryButton: UIButton {
     }
     
     override open var inputView: UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 200))
+        let view = JSQActionSelectView(frame: CGRect(x: 0, y: 0, width: 500, height: 258))
+        view.delegate = self
+        view.sourse = self.sourses.map {
+            return (image: $0.image, title: $0.title)
+        }
         return view
     }
     
 }
 
 extension JSQAccessoryButton: UIKeyInput {
-    // It is not necessary to store text in this situation.
     public var hasText: Bool {
         return false
     }
     
     public func insertText(_ text: String) {
-        //setNeedsDisplay()
     }
     
     public func deleteBackward() {
-        //setNeedsDisplay()
+    }
+}
+
+extension JSQAccessoryButton: JSQActionSelectViewDelegate {
+    public func didSelectView(atIndex index: Int) {
+        sourses[index].action()
     }
 }

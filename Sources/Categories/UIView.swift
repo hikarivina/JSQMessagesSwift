@@ -23,3 +23,24 @@ extension UIView {
         self.jsq_pinSubview(subview, toEdge: .trailing)
     }
 }
+
+extension UIView {
+    
+    @IBInspectable var borderColor: UIColor {
+        get {
+            return UIColor.clear
+        }
+        set (color) {
+            self.layer.borderColor = color.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return 0
+        }
+        set (width) {
+            self.layer.borderWidth = width
+        }
+    }
+}
