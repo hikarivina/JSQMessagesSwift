@@ -11,7 +11,7 @@ import UIKit
 
 @objc public protocol JSQMessagesCollectionViewDataSource: UICollectionViewDataSource {
     
-    var senderID: String { get }
+    var senderId: String { get }
     var senderDisplayName: String { get }
     
     func collectionView(_ collectionView: JSQMessagesCollectionView, messageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageData

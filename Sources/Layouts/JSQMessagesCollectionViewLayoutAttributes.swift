@@ -23,34 +23,26 @@ open class JSQMessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttr
     // MARK: - NSObject
     
     open override func isEqual(_ object: Any?) -> Bool {
-        
-        if !(object! as AnyObject).isKind(of: type(of: self)) {
-            
-            return false
-        }
-        
-        if self.representedElementCategory == .cell {
-            
-            if let layoutAttributes = object as? JSQMessagesCollectionViewLayoutAttributes {
-                
-                if !layoutAttributes.messageBubbleFont.isEqual(self.messageBubbleFont)
-                    || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewFrameInsets, self.textViewFrameInsets)
-                    || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewTextContainerInsets, self.textViewTextContainerInsets)
-                    || !layoutAttributes.incomingAvatarViewSize.equalTo(self.incomingAvatarViewSize)
-                    || !layoutAttributes.outgoingAvatarViewSize.equalTo(self.outgoingAvatarViewSize)
-                    || layoutAttributes.messageBubbleContainerViewWidth != self.messageBubbleContainerViewWidth
-                    || layoutAttributes.cellTopLabelHeight != self.cellTopLabelHeight
-                    || layoutAttributes.messageBubbleTopLabelHeight != self.messageBubbleTopLabelHeight
-                    || layoutAttributes.cellBottomLabelHeight != self.cellBottomLabelHeight {
-                            
-                    return false
-                }
+
+        if let layoutAttributes = object as? JSQMessagesCollectionViewLayoutAttributes {
+
+            if !layoutAttributes.messageBubbleFont.isEqual(self.messageBubbleFont)
+                || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewFrameInsets, self.textViewFrameInsets)
+                || !UIEdgeInsetsEqualToEdgeInsets(layoutAttributes.textViewTextContainerInsets, self.textViewTextContainerInsets)
+                || !layoutAttributes.incomingAvatarViewSize.equalTo(self.incomingAvatarViewSize)
+                || !layoutAttributes.outgoingAvatarViewSize.equalTo(self.outgoingAvatarViewSize)
+                || layoutAttributes.messageBubbleContainerViewWidth != self.messageBubbleContainerViewWidth
+                || layoutAttributes.cellTopLabelHeight != self.cellTopLabelHeight
+                || layoutAttributes.messageBubbleTopLabelHeight != self.messageBubbleTopLabelHeight
+                || layoutAttributes.cellBottomLabelHeight != self.cellBottomLabelHeight {
+
+                return false
             }
         }
-        
+
         return super.isEqual(object)
     }
-    
+
     open override var hash:Int {
         
         get {
@@ -62,28 +54,18 @@ open class JSQMessagesCollectionViewLayoutAttributes: UICollectionViewLayoutAttr
     // MARK: - NSCopying
     
     open override func copy(with zone: NSZone?) -> Any {
+
+        let copy = super.copy(with: zone) as! JSQMessagesCollectionViewLayoutAttributes
         
-//        let copy: AnyObject = super.copy(with: zone)
-        let copy: Any = super.copy(with: zone)
-        
-        if (copy as AnyObject).representedElementCategory != .cell {
-            
-            return copy
-        }
-        
-        if let copy = copy as? JSQMessagesCollectionViewLayoutAttributes {
-        
-            copy.messageBubbleFont = self.messageBubbleFont
-            copy.messageBubbleContainerViewWidth = self.messageBubbleContainerViewWidth
-            copy.textViewFrameInsets = self.textViewFrameInsets
-            copy.textViewTextContainerInsets = self.textViewTextContainerInsets
-            copy.incomingAvatarViewSize = self.incomingAvatarViewSize
-            copy.outgoingAvatarViewSize = self.outgoingAvatarViewSize
-            copy.cellTopLabelHeight = self.cellTopLabelHeight
-            copy.messageBubbleTopLabelHeight = self.messageBubbleTopLabelHeight
-            copy.cellBottomLabelHeight = self.cellBottomLabelHeight
-        }
-        
+        copy.messageBubbleFont = self.messageBubbleFont
+        copy.messageBubbleContainerViewWidth = self.messageBubbleContainerViewWidth
+        copy.textViewFrameInsets = self.textViewFrameInsets
+        copy.textViewTextContainerInsets = self.textViewTextContainerInsets
+        copy.incomingAvatarViewSize = self.incomingAvatarViewSize
+        copy.outgoingAvatarViewSize = self.outgoingAvatarViewSize
+        copy.cellTopLabelHeight = self.cellTopLabelHeight
+        copy.messageBubbleTopLabelHeight = self.messageBubbleTopLabelHeight
+        copy.cellBottomLabelHeight = self.cellBottomLabelHeight
         return copy
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 @objc public protocol JSQMessageData {
     
-    var senderID: String { get }
+    var senderId: String { get }
     var senderDisplayName: String { get }
     var date: Date { get }
     var isMediaMessage: Bool { get }

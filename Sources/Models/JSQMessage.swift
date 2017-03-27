@@ -10,7 +10,7 @@ import Foundation
 
 open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
     
-    fileprivate(set) open var senderID: String
+    fileprivate(set) open var senderId: String
     fileprivate(set) open var senderDisplayName: String
     fileprivate(set) open var date: Date
     
@@ -52,7 +52,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
     
     fileprivate init(senderId: String, senderDisplayName: String, date: Date, isMedia: Bool) {
         
-        self.senderID = senderId
+        self.senderId = senderId
         self.senderDisplayName = senderDisplayName
         self.date = date
         self.isMediaMessage = isMedia
@@ -78,7 +78,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
             
             let hasEqualContent: Bool = (self.isMediaMessage ? self.media?.isEqual(msg.media) : self.text == msg.text) ?? false
             
-            return self.senderID == msg.senderID
+            return self.senderId == msg.senderId
                     && self.senderDisplayName == msg.senderDisplayName
                     && self.date.compare(msg.date) == .orderedSame
                     && hasEqualContent
@@ -92,7 +92,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
         get {
             
             let contentHash = self.isMediaMessage ? self.media?.mediaHash : self.text?.hash
-            return self.senderID.hash^(self.date as NSDate).hash^contentHash!
+            return self.senderId.hash^(self.date as NSDate).hash^contentHash!
         }
     }
     
@@ -100,7 +100,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
         
         get {
             
-            return "<\(type(of: self)): senderId=\(self.senderID), senderDisplayName=\(self.senderDisplayName), date=\(self.date), isMediaMessage=\(self.isMediaMessage), text=\(self.text), media=\(self.media)>"
+            return "<\(type(of: self)): senderId=\(self.senderId), senderDisplayName=\(self.senderDisplayName), date=\(self.date), isMediaMessage=\(self.isMediaMessage), text=\(self.text), media=\(self.media)>"
         }
     }
     
@@ -113,7 +113,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
     
     public required init(coder aDecoder: NSCoder) {
         
-        self.senderID = aDecoder.decodeObject(forKey: "senderID") as? String ?? ""
+        self.senderId = aDecoder.decodeObject(forKey: "senderID") as? String ?? ""
         self.senderDisplayName = aDecoder.decodeObject(forKey: "senderDisplayName") as? String ?? ""
         self.date = aDecoder.decodeObject(forKey: "date") as? Date ?? Date()
         
@@ -125,7 +125,7 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
     
     open func encode(with aCoder: NSCoder) {
         
-        aCoder.encode(self.senderID, forKey: "senderID")
+        aCoder.encode(self.senderId, forKey: "senderID")
         aCoder.encode(self.senderDisplayName, forKey: "senderDisplayName")
         aCoder.encode(self.date, forKey: "date")
         
@@ -141,9 +141,9 @@ open class JSQMessage: NSObject, JSQMessageData, NSCoding, NSCopying {
         
         if self.isMediaMessage {
             
-            return type(of: self).init(senderId: self.senderID, senderDisplayName: self.senderDisplayName, date: self.date, media: self.media!)
+            return type(of: self).init(senderId: self.senderId, senderDisplayName: self.senderDisplayName, date: self.date, media: self.media!)
         }
         
-        return type(of: self).init(senderId: self.senderID, senderDisplayName: self.senderDisplayName, date: self.date, text: self.text!)
+        return type(of: self).init(senderId: self.senderId, senderDisplayName: self.senderDisplayName, date: self.date, text: self.text!)
     }
 }

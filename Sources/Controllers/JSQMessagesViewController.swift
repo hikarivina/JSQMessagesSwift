@@ -18,7 +18,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     open var keyboardController: JSQMessagesKeyboardController!
     
-    open var senderID: String = ""
+    open var senderId: String = ""
     open var senderDisplayName: String = ""
     
     open var automaticallyScrollsToMostRecentMessage: Bool = true
@@ -134,7 +134,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         
         super.viewWillAppear(animated)
         
-        if self.senderID == "" {
+        if self.senderId == "" {
             
             print("senderID must not be nil \(#function)")
             abort()
@@ -369,8 +369,8 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         
         let messageItem = dataSource.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath)
         
-        let messageSendId = messageItem.senderID
-        let isOutgoingMessage = messageSendId == self.senderID
+        let messageSendId = messageItem.senderId
+        let isOutgoingMessage = messageSendId == self.senderId
         let isMediaMessage = messageItem.isMediaMessage
         
         var cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier
@@ -398,9 +398,6 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
             cell.messageBubbleImageView?.highlightedImage = bubbleImageDataSource.messageBubbleHighlightedImage
         }
         else {
-            // MARk: Dang Test
-//            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath)
-//            cell.bubbleImage = bubbleImageDataSource.messageBubbleImage
             let messageMedia = messageItem.media!
             cell.mediaView = messageMedia.mediaView != nil ? messageMedia.mediaView: messageMedia.mediaPlaceholderView
         }
@@ -574,7 +571,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         }
         else {
             
-            self.didPressSendButton(sender, withMessageText: self.jsq_currentlyComposedMessageText(), senderId: self.senderID, senderDisplayName: self.senderDisplayName, date: Date())
+            self.didPressSendButton(sender, withMessageText: self.jsq_currentlyComposedMessageText(), senderId: self.senderId, senderDisplayName: self.senderDisplayName, date: Date())
         }
     }
     
@@ -582,7 +579,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         
         if toolbar.sendButtonOnRight {
             
-            self.didPressSendButton(sender, withMessageText: self.jsq_currentlyComposedMessageText(), senderId: self.senderID, senderDisplayName: self.senderDisplayName, date: Date())
+            self.didPressSendButton(sender, withMessageText: self.jsq_currentlyComposedMessageText(), senderId: self.senderId, senderDisplayName: self.senderDisplayName, date: Date())
         }
         else {
             

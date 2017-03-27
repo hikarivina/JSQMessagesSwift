@@ -446,8 +446,8 @@ open class JSQMessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         if let messageItem = self.messagesCollectionView.messagesDataSource?.collectionView(self.messagesCollectionView, messageDataForItemAtIndexPath: indexPath) {
             
-            let messageSender = messageItem.senderID
-            if messageSender == self.messagesCollectionView.messagesDataSource?.senderID {
+            let messageSender = messageItem.senderId
+            if messageSender == self.messagesCollectionView.messagesDataSource?.senderId {
                 
                 return self.outgoingAvatarViewSize
             }

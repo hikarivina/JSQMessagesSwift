@@ -30,7 +30,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func setup() {
-        self.senderID = "1234"
+        self.senderId = "1234"
         self.senderDisplayName = "Dang"
         
         self.setupUI()
@@ -89,12 +89,10 @@ class ChatViewController: JSQMessagesViewController {
         self.showTypingIndicator = true
         self.finishSendingMessage()
     }
-    
-    override func didPressAccessoryButton(_ sender: UIButton) {
 
-        
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("Scroll")
     }
-    
 }
 
 extension ChatViewController {
@@ -106,7 +104,7 @@ extension ChatViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = self.messages[indexPath.row]
-        if message.senderID != self.senderID {
+        if message.senderId != self.senderId {
             cell.textView?.textColor = UIColor.black
         }
         
@@ -124,13 +122,14 @@ extension ChatViewController {
     override func collectionView(_ collectionView: JSQMessagesCollectionView, messageBubbleImageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageBubbleImageDataSource {
         let message = self.messages[indexPath.item]
         
-        return message.senderID == self.senderID ? self.outgoingBubble : self.incomingBubble
+        return message.senderId == self.senderId ? self.outgoingBubble : self.incomingBubble
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, avatarImageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageAvatarImageDataSource? {
         let message = self.messages[indexPath.item]
         
-        return message.senderID == self.senderID ? self.outgoingAvatar : self.incomingAvatar
+        return message.senderId == self.senderId ? self.outgoingAvatar : self.incomingAvatar
         
     }
 }
+
