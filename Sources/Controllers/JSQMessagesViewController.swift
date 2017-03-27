@@ -317,35 +317,35 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     // MARK: - JSQMessages collection view data source
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, messageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageData {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, messageDataForItemAt indexPath: IndexPath) -> JSQMessageData {
         
         print("ERROR: required method not implemented: \(#function)")
         abort()
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, messageBubbleImageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageBubbleImageDataSource {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, messageBubbleImageDataForItemAt indexPath: IndexPath) -> JSQMessageBubbleImageDataSource {
         
         print("ERROR: required method not implemented: \(#function)")
         abort()
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, avatarImageDataForItemAtIndexPath indexPath: IndexPath) -> JSQMessageAvatarImageDataSource? {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, avatarImageDataForItemAt indexPath: IndexPath) -> JSQMessageAvatarImageDataSource? {
         
         print("ERROR: required method not implemented: \(#function)")
         abort()
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellTopLabelAtIndexPath indexPath: IndexPath) -> NSAttributedString? {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellTopLabelAt indexPath: IndexPath) -> NSAttributedString? {
         
         return nil
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: IndexPath) -> NSAttributedString? {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath) -> NSAttributedString? {
         
         return nil
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellBottomLabelAtIndexPath indexPath: IndexPath) -> NSAttributedString? {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellBottomLabelAt indexPath: IndexPath) -> NSAttributedString? {
         
         return nil
     }
@@ -367,7 +367,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         let dataSource = collectionView.dataSource as! JSQMessagesCollectionViewDataSource
         let flowLayout = collectionView.collectionViewLayout as! JSQMessagesCollectionViewFlowLayout
         
-        let messageItem = dataSource.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath)
+        let messageItem = dataSource.collectionView(self.collectionView, messageDataForItemAt: indexPath)
         
         let messageSendId = messageItem.senderId
         let isOutgoingMessage = messageSendId == self.senderId
@@ -393,7 +393,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
                 ])
             }
             
-            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath)
+            let bubbleImageDataSource = dataSource.collectionView(self.collectionView, messageBubbleImageDataForItemAt: indexPath)
             cell.messageBubbleImageView?.image = bubbleImageDataSource.messageBubbleImage
             cell.messageBubbleImageView?.highlightedImage = bubbleImageDataSource.messageBubbleHighlightedImage
         }
@@ -415,7 +415,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         var avatarImageDataSource: JSQMessageAvatarImageDataSource?
         if needsAvatar {
             
-            avatarImageDataSource = dataSource.collectionView(self.collectionView, avatarImageDataForItemAtIndexPath: indexPath)
+            avatarImageDataSource = dataSource.collectionView(self.collectionView, avatarImageDataForItemAt: indexPath)
             if let avatarImageDataSource = avatarImageDataSource {
                 
                 if let avatarImage = avatarImageDataSource.avatarImage {
@@ -432,9 +432,9 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
             }
         }
         
-        cell.cellTopLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForCellTopLabelAtIndexPath: indexPath)
-        cell.messageBubbleTopLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForMessageBubbleTopLabelAtIndexPath: indexPath)
-        cell.cellBottomLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForCellBottomLabelAtIndexPath: indexPath)
+        cell.cellTopLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForCellTopLabelAt: indexPath)
+        cell.messageBubbleTopLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForMessageBubbleTopLabelAt: indexPath)
+        cell.cellBottomLabel.attributedText = dataSource.collectionView?(self.collectionView, attributedTextForCellBottomLabelAt: indexPath)
         
         let bubbleTopLabelInset: CGFloat = avatarImageDataSource != nil ? 60 : 15
         
@@ -494,7 +494,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
     
     open func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         
-        if let messageItem = (collectionView.dataSource as? JSQMessagesCollectionViewDataSource)?.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath) {
+        if let messageItem = (collectionView.dataSource as? JSQMessagesCollectionViewDataSource)?.collectionView(self.collectionView, messageDataForItemAt: indexPath) {
             
             if messageItem.isMediaMessage {
                 
@@ -526,7 +526,7 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         
         if action == #selector(UIResponderStandardEditActions.copy(_:)) {
 
-            if let messageData = (collectionView.dataSource as? JSQMessagesCollectionViewDataSource)?.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath) {
+            if let messageData = (collectionView.dataSource as? JSQMessagesCollectionViewDataSource)?.collectionView(self.collectionView, messageDataForItemAt: indexPath) {
                 
                 UIPasteboard.general.string = messageData.text
             }
@@ -540,26 +540,26 @@ open class JSQMessagesViewController: UIViewController, JSQMessagesCollectionVie
         return (collectionViewLayout as! JSQMessagesCollectionViewFlowLayout).sizeForItem(indexPath)
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForCellTopLabelAtIndexPath indexPath: IndexPath) -> CGFloat {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForCellTopLabelAt indexPath: IndexPath) -> CGFloat {
         
         return 10
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForMessageBubbleTopLabelAtIndexPath indexPath: IndexPath) -> CGFloat {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForMessageBubbleTopLabelAt indexPath: IndexPath) -> CGFloat {
         
         return 0
     }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForCellBottomLabelAtIndexPath indexPath: IndexPath) -> CGFloat {
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, layout: JSQMessagesCollectionViewFlowLayout, heightForCellBottomLabelAt indexPath: IndexPath) -> CGFloat {
         
         return 0
     }
     
     open func collectionView(_ collectionView: JSQMessagesCollectionView, didTapAvatarImageView imageView: UIImageView, atIndexPath indexPath: IndexPath) { }
     
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, didTapMessageBubbleAtIndexPath indexPath: IndexPath) { }
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, didTapMessageBubbleAt indexPath: IndexPath) { }
 
-    open func collectionView(_ collectionView: JSQMessagesCollectionView, didTapCellAtIndexPath indexPath: IndexPath, touchLocation: CGPoint) { }
+    open func collectionView(_ collectionView: JSQMessagesCollectionView, didTapCellAt indexPath: IndexPath, touchLocation: CGPoint) { }
 
     // MARK: - Input toolbar delegate
     

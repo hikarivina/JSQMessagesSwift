@@ -362,7 +362,7 @@ open class JSQMessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     func messageBubbleSize(_ indexPath: IndexPath) -> CGSize {
         
-        if let messageItem = self.messagesCollectionView.messagesDataSource?.collectionView(self.messagesCollectionView, messageDataForItemAtIndexPath: indexPath) {
+        if let messageItem = self.messagesCollectionView.messagesDataSource?.collectionView(self.messagesCollectionView, messageDataForItemAt: indexPath) {
         
             if let cachedSize = self.messageBubbleCache.object(forKey: String(messageItem.messageHash) as NSString) as? NSValue {
                 
@@ -436,15 +436,15 @@ open class JSQMessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
         layoutAttributes.messageBubbleFont = self.messageBubbleFont
         layoutAttributes.incomingAvatarViewSize = self.incomingAvatarViewSize
         layoutAttributes.outgoingAvatarViewSize = self.outgoingAvatarViewSize
-        layoutAttributes.cellTopLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForCellTopLabelAtIndexPath: indexPath) ?? layoutAttributes.cellTopLabelHeight
-        layoutAttributes.messageBubbleTopLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForMessageBubbleTopLabelAtIndexPath: indexPath) ?? layoutAttributes.messageBubbleTopLabelHeight
-        layoutAttributes.cellBottomLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForCellBottomLabelAtIndexPath: indexPath) ?? layoutAttributes.cellBottomLabelHeight
+        layoutAttributes.cellTopLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForCellTopLabelAt: indexPath) ?? layoutAttributes.cellTopLabelHeight
+        layoutAttributes.messageBubbleTopLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForMessageBubbleTopLabelAt: indexPath) ?? layoutAttributes.messageBubbleTopLabelHeight
+        layoutAttributes.cellBottomLabelHeight = self.messagesCollectionView.messagesDelegate?.collectionView?(self.messagesCollectionView, layout: self, heightForCellBottomLabelAt: indexPath) ?? layoutAttributes.cellBottomLabelHeight
         
     }
     
     func jsq_avatarSize(_ indexPath: IndexPath) -> CGSize {
         
-        if let messageItem = self.messagesCollectionView.messagesDataSource?.collectionView(self.messagesCollectionView, messageDataForItemAtIndexPath: indexPath) {
+        if let messageItem = self.messagesCollectionView.messagesDataSource?.collectionView(self.messagesCollectionView, messageDataForItemAt: indexPath) {
             
             let messageSender = messageItem.senderId
             if messageSender == self.messagesCollectionView.messagesDataSource?.senderId {

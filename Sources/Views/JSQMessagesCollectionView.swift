@@ -112,7 +112,7 @@ open class JSQMessagesCollectionView: UICollectionView, JSQMessagesCollectionVie
         
         if let indexPath = self.indexPath(for: cell) {
             
-            self.messagesDelegate?.collectionView?(self, didTapMessageBubbleAtIndexPath: indexPath)
+            self.messagesDelegate?.collectionView?(self, didTapMessageBubbleAt: indexPath)
         }
     }
     
@@ -120,7 +120,7 @@ open class JSQMessagesCollectionView: UICollectionView, JSQMessagesCollectionVie
         
         if let indexPath = self.indexPath(for: cell) {
             
-            self.messagesDelegate?.collectionView?(self, didTapCellAtIndexPath: indexPath, touchLocation: position)
+            self.messagesDelegate?.collectionView?(self, didTapCellAt: indexPath, touchLocation: position)
         }
     }
     
